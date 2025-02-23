@@ -1125,3 +1125,145 @@
 2025-02-23 08:54:30,867 - INFO - 127.0.0.1 - - [23/Feb/2025 08:54:30] "GET /Health HTTP/1.1" 200 -
 2025-02-23 08:55:58,160 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
 2025-02-23 08:55:58,526 - INFO -  * Restarting with stat
+2025-02-23 09:33:31,201 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-23 09:33:31,201 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-23 09:33:31,204 - INFO -  * Restarting with stat
+2025-02-23 09:33:32,743 - WARNING -  * Debugger is active!
+2025-02-23 09:33:32,779 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 09:45:27,548 - INFO - 127.0.0.1 - - [23/Feb/2025 09:45:27] "GET /chatbot HTTP/1.1" 200 -
+2025-02-23 09:49:15,341 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/chatbot/config.py', reloading
+2025-02-23 09:49:15,604 - INFO -  * Restarting with stat
+2025-02-23 09:49:18,002 - WARNING -  * Debugger is active!
+2025-02-23 09:49:18,034 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 09:50:29,658 - INFO - 127.0.0.1 - - [23/Feb/2025 09:50:29] "GET / HTTP/1.1" 200 -
+2025-02-23 09:50:32,677 - INFO - 127.0.0.1 - - [23/Feb/2025 09:50:32] "GET /Health HTTP/1.1" 200 -
+2025-02-23 09:50:34,840 - INFO - 127.0.0.1 - - [23/Feb/2025 09:50:34] "GET /Health HTTP/1.1" 200 -
+2025-02-23 09:50:36,223 - INFO - 127.0.0.1 - - [23/Feb/2025 09:50:36] "GET / HTTP/1.1" 200 -
+2025-02-23 09:50:37,229 - INFO - 127.0.0.1 - - [23/Feb/2025 09:50:37] "GET /report HTTP/1.1" 200 -
+2025-02-23 09:50:44,128 - INFO - 127.0.0.1 - - [23/Feb/2025 09:50:44] "GET /dashboard HTTP/1.1" 200 -
+2025-02-23 09:50:47,697 - INFO - 127.0.0.1 - - [23/Feb/2025 09:50:47] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 09:50:59,099 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-02-23 09:51:00,697 - INFO - 127.0.0.1 - - [23/Feb/2025 09:51:00] "POST /predict_heart_disease HTTP/1.1" 200 -
+2025-02-23 09:51:14,201 - INFO - 127.0.0.1 - - [23/Feb/2025 09:51:14] "[33mGET /voice_symptoms HTTP/1.1[0m" 404 -
+2025-02-23 09:51:17,176 - INFO - 127.0.0.1 - - [23/Feb/2025 09:51:17] "GET / HTTP/1.1" 200 -
+2025-02-23 09:51:18,179 - INFO - 127.0.0.1 - - [23/Feb/2025 09:51:18] "GET /services HTTP/1.1" 200 -
+2025-02-23 09:51:21,039 - INFO - 127.0.0.1 - - [23/Feb/2025 09:51:21] "GET /services HTTP/1.1" 200 -
+2025-02-23 09:51:34,784 - INFO - 127.0.0.1 - - [23/Feb/2025 09:51:34] "POST /predict HTTP/1.1" 200 -
+2025-02-23 09:53:19,411 - INFO - 127.0.0.1 - - [23/Feb/2025 09:53:19] "GET / HTTP/1.1" 200 -
+2025-02-23 09:53:20,610 - INFO - 127.0.0.1 - - [23/Feb/2025 09:53:20] "[33mGET /voice_symptoms HTTP/1.1[0m" 404 -
+2025-02-23 09:53:43,059 - INFO - 127.0.0.1 - - [23/Feb/2025 09:53:43] "[33mGET /voice_symptoms HTTP/1.1[0m" 404 -
+2025-02-23 09:54:56,903 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 09:54:57,240 - INFO -  * Restarting with stat
+2025-02-23 09:54:59,560 - WARNING -  * Debugger is active!
+2025-02-23 09:54:59,591 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 09:55:47,757 - INFO - 127.0.0.1 - - [23/Feb/2025 09:55:47] "[33mGET /voice_symptoms HTTP/1.1[0m" 404 -
+2025-02-23 09:55:50,628 - INFO - 127.0.0.1 - - [23/Feb/2025 09:55:50] "GET / HTTP/1.1" 200 -
+2025-02-23 09:55:55,448 - INFO - 127.0.0.1 - - [23/Feb/2025 09:55:55] "GET /locator HTTP/1.1" 200 -
+2025-02-23 09:56:55,068 - INFO - 127.0.0.1 - - [23/Feb/2025 09:56:55] "GET / HTTP/1.1" 200 -
+2025-02-23 09:57:01,648 - INFO - 127.0.0.1 - - [23/Feb/2025 09:57:01] "GET /Health HTTP/1.1" 200 -
+2025-02-23 09:57:03,759 - INFO - 127.0.0.1 - - [23/Feb/2025 09:57:03] "GET /dashboard HTTP/1.1" 200 -
+2025-02-23 09:57:05,906 - INFO - 127.0.0.1 - - [23/Feb/2025 09:57:05] "GET /services HTTP/1.1" 200 -
+2025-02-23 09:57:09,759 - INFO - 127.0.0.1 - - [23/Feb/2025 09:57:09] "GET /report HTTP/1.1" 200 -
+2025-02-23 09:57:11,882 - INFO - 127.0.0.1 - - [23/Feb/2025 09:57:11] "GET /Health HTTP/1.1" 200 -
+2025-02-23 09:57:13,590 - INFO - 127.0.0.1 - - [23/Feb/2025 09:57:13] "GET /locator HTTP/1.1" 200 -
+2025-02-23 09:57:22,067 - INFO - 127.0.0.1 - - [23/Feb/2025 09:57:22] "GET /report HTTP/1.1" 200 -
+2025-02-23 09:59:25,440 - INFO - 127.0.0.1 - - [23/Feb/2025 09:59:25] "GET / HTTP/1.1" 200 -
+2025-02-23 09:59:26,380 - INFO - 127.0.0.1 - - [23/Feb/2025 09:59:26] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 09:59:35,473 - INFO - 127.0.0.1 - - [23/Feb/2025 09:59:35] "GET /services HTTP/1.1" 200 -
+2025-02-23 09:59:43,500 - INFO - 127.0.0.1 - - [23/Feb/2025 09:59:43] "GET /chatbot HTTP/1.1" 200 -
+2025-02-23 09:59:56,830 - INFO - Saved image to: uploads/20250223_095956/WhatsApp_Image_2025-01-27_at_11.00.24.jpeg
+2025-02-23 10:00:49,571 - INFO - HTTP Request: POST https://lamprey-useful-slug.ngrok-free.app/api/chat "HTTP/1.1 200 OK"
+2025-02-23 10:00:49,580 - INFO - 127.0.0.1 - - [23/Feb/2025 10:00:49] "POST /chat HTTP/1.1" 200 -
+2025-02-23 10:01:27,820 - INFO - HTTP Request: POST https://lamprey-useful-slug.ngrok-free.app/api/chat "HTTP/1.1 200 OK"
+2025-02-23 10:01:27,821 - INFO - 127.0.0.1 - - [23/Feb/2025 10:01:27] "POST /chat HTTP/1.1" 200 -
+2025-02-23 10:01:52,620 - INFO - HTTP Request: POST https://lamprey-useful-slug.ngrok-free.app/api/chat "HTTP/1.1 200 OK"
+2025-02-23 10:01:52,624 - INFO - 127.0.0.1 - - [23/Feb/2025 10:01:52] "POST /chat HTTP/1.1" 200 -
+2025-02-23 10:02:09,502 - INFO - 127.0.0.1 - - [23/Feb/2025 10:02:09] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-02-23 10:02:09,505 - INFO - 127.0.0.1 - - [23/Feb/2025 10:02:09] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-02-23 10:02:09,508 - INFO - 127.0.0.1 - - [23/Feb/2025 10:02:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-23 10:02:12,326 - INFO - 127.0.0.1 - - [23/Feb/2025 10:02:12] "GET /chatbot HTTP/1.1" 200 -
+2025-02-23 10:02:14,467 - INFO - 127.0.0.1 - - [23/Feb/2025 10:02:14] "GET / HTTP/1.1" 200 -
+2025-02-23 10:02:14,559 - INFO - 127.0.0.1 - - [23/Feb/2025 10:02:14] "GET / HTTP/1.1" 200 -
+2025-02-23 10:02:26,390 - INFO - 127.0.0.1 - - [23/Feb/2025 10:02:26] "GET /services HTTP/1.1" 200 -
+2025-02-23 10:02:28,720 - INFO - 127.0.0.1 - - [23/Feb/2025 10:02:28] "GET / HTTP/1.1" 200 -
+2025-02-23 10:03:03,190 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:03] "GET / HTTP/1.1" 200 -
+2025-02-23 10:03:06,622 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:06] "GET /services HTTP/1.1" 200 -
+2025-02-23 10:03:21,507 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:21] "GET /services HTTP/1.1" 200 -
+2025-02-23 10:03:22,426 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:22] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 10:03:26,107 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:26] "GET / HTTP/1.1" 200 -
+2025-02-23 10:03:30,291 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:30] "GET /Health HTTP/1.1" 200 -
+2025-02-23 10:03:33,804 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:33] "GET /Health HTTP/1.1" 200 -
+2025-02-23 10:03:35,280 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:35] "GET /chatbot HTTP/1.1" 200 -
+2025-02-23 10:03:37,858 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:37] "GET /dashboard HTTP/1.1" 200 -
+2025-02-23 10:03:39,754 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:39] "GET / HTTP/1.1" 200 -
+2025-02-23 10:03:40,638 - INFO - 127.0.0.1 - - [23/Feb/2025 10:03:40] "GET /services HTTP/1.1" 200 -
+2025-02-23 10:04:11,542 - INFO - 127.0.0.1 - - [23/Feb/2025 10:04:11] "GET / HTTP/1.1" 200 -
+2025-02-23 10:04:12,626 - INFO - 127.0.0.1 - - [23/Feb/2025 10:04:12] "GET /services HTTP/1.1" 200 -
+2025-02-23 10:04:31,691 - INFO - 127.0.0.1 - - [23/Feb/2025 10:04:31] "GET / HTTP/1.1" 200 -
+2025-02-23 10:04:32,971 - INFO - 127.0.0.1 - - [23/Feb/2025 10:04:32] "GET /services HTTP/1.1" 200 -
+2025-02-23 10:05:18,180 - INFO - 127.0.0.1 - - [23/Feb/2025 10:05:18] "GET /services HTTP/1.1" 200 -
+2025-02-23 10:05:19,743 - INFO - 127.0.0.1 - - [23/Feb/2025 10:05:19] "GET / HTTP/1.1" 200 -
+2025-02-23 10:05:22,213 - INFO - 127.0.0.1 - - [23/Feb/2025 10:05:22] "GET /Health HTTP/1.1" 200 -
+2025-02-23 10:06:40,706 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-02-23 10:06:44,920 - INFO - 127.0.0.1 - - [23/Feb/2025 10:06:44] "POST /correlate_health HTTP/1.1" 200 -
+2025-02-23 10:08:15,974 - INFO - 127.0.0.1 - - [23/Feb/2025 10:08:15] "GET / HTTP/1.1" 200 -
+2025-02-23 10:08:17,226 - INFO - 127.0.0.1 - - [23/Feb/2025 10:08:17] "GET / HTTP/1.1" 200 -
+2025-02-23 10:08:17,960 - INFO - 127.0.0.1 - - [23/Feb/2025 10:08:17] "GET /services HTTP/1.1" 200 -
+2025-02-23 10:08:21,748 - INFO - 127.0.0.1 - - [23/Feb/2025 10:08:21] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 10:08:24,828 - INFO - 127.0.0.1 - - [23/Feb/2025 10:08:24] "GET /chatbot HTTP/1.1" 200 -
+2025-02-23 10:08:42,446 - INFO - Saved image to: uploads/20250223_100842/WhatsApp_Image_2025-01-27_at_11.00.24.jpeg
+2025-02-23 10:09:08,638 - INFO - HTTP Request: POST https://lamprey-useful-slug.ngrok-free.app/api/chat "HTTP/1.1 200 OK"
+2025-02-23 10:09:08,641 - INFO - 127.0.0.1 - - [23/Feb/2025 10:09:08] "POST /chat HTTP/1.1" 200 -
+2025-02-23 10:09:31,587 - INFO - HTTP Request: POST https://lamprey-useful-slug.ngrok-free.app/api/chat "HTTP/1.1 200 OK"
+2025-02-23 10:09:31,591 - INFO - 127.0.0.1 - - [23/Feb/2025 10:09:31] "POST /chat HTTP/1.1" 200 -
+2025-02-23 10:10:48,046 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 10:10:48,409 - INFO -  * Restarting with stat
+2025-02-23 10:15:12,494 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-23 10:15:12,495 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-23 10:15:12,495 - INFO -  * Restarting with stat
+2025-02-23 10:15:14,056 - WARNING -  * Debugger is active!
+2025-02-23 10:15:14,092 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 10:15:14,170 - INFO - 127.0.0.1 - - [23/Feb/2025 10:15:14] "GET / HTTP/1.1" 200 -
+2025-02-23 10:15:17,251 - INFO - 127.0.0.1 - - [23/Feb/2025 10:15:17] "GET /virtual-assistant HTTP/1.1" 200 -
+2025-02-23 10:15:17,265 - INFO - 127.0.0.1 - - [23/Feb/2025 10:15:17] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2025-02-23 10:15:17,268 - INFO - 127.0.0.1 - - [23/Feb/2025 10:15:17] "[33mGET /static/js/script.js HTTP/1.1[0m" 404 -
+2025-02-23 10:16:36,430 - INFO - 127.0.0.1 - - [23/Feb/2025 10:16:36] "GET /chatbot HTTP/1.1" 200 -
+2025-02-23 10:16:46,478 - INFO - 127.0.0.1 - - [23/Feb/2025 10:16:46] "GET /services HTTP/1.1" 200 -
+2025-02-23 10:16:49,660 - INFO - 127.0.0.1 - - [23/Feb/2025 10:16:49] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 10:16:58,457 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-02-23 10:16:59,638 - INFO - 127.0.0.1 - - [23/Feb/2025 10:16:59] "POST /predict_heart_disease HTTP/1.1" 200 -
+2025-02-23 10:19:01,676 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:01] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-02-23 10:19:01,679 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:01] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-02-23 10:19:01,682 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-23 10:19:01,817 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:01] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-02-23 10:19:01,820 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:01] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-02-23 10:19:01,822 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-23 10:19:04,283 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:04] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 10:19:04,430 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:04] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 10:19:10,908 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:10] "GET / HTTP/1.1" 200 -
+2025-02-23 10:19:11,683 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:11] "[33mGET /home HTTP/1.1[0m" 404 -
+2025-02-23 10:19:15,524 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:15] "GET / HTTP/1.1" 200 -
+2025-02-23 10:19:17,190 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:17] "GET /virtual-assistant HTTP/1.1" 200 -
+2025-02-23 10:19:17,224 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:17] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-02-23 10:19:17,224 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-23 10:19:17,271 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:17] "GET /socket.io/?EIO=4&transport=polling&t=PKn8s7I HTTP/1.1" 200 -
+2025-02-23 10:19:17,292 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:17] "POST /socket.io/?EIO=4&transport=polling&t=PKn8s7a&sid=jMJ6jEdavGWFANSuAAAA HTTP/1.1" 200 -
+2025-02-23 10:19:17,300 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:17] "GET /socket.io/?EIO=4&transport=polling&t=PKn8s7d&sid=jMJ6jEdavGWFANSuAAAA HTTP/1.1" 200 -
+2025-02-23 10:19:17,305 - INFO - 127.0.0.1 - - [23/Feb/2025 10:19:17] "GET /socket.io/?EIO=4&transport=polling&t=PKn8s7s&sid=jMJ6jEdavGWFANSuAAAA HTTP/1.1" 200 -
+2025-02-23 10:20:31,923 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:31] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-02-23 10:20:31,925 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:31] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-02-23 10:20:31,927 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-23 10:20:34,526 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "GET /virtual-assistant HTTP/1.1" 200 -
+2025-02-23 10:20:34,542 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-23 10:20:34,544 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-02-23 10:20:34,606 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "GET /virtual-assistant HTTP/1.1" 200 -
+2025-02-23 10:20:34,618 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-23 10:20:34,621 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-02-23 10:20:34,636 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "GET /socket.io/?EIO=4&transport=polling&t=PKn9909 HTTP/1.1" 200 -
+2025-02-23 10:20:34,655 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "POST /socket.io/?EIO=4&transport=polling&t=PKn990Q&sid=cNdgwskLVmNSdBn2AAAC HTTP/1.1" 200 -
+2025-02-23 10:20:34,658 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "GET /socket.io/?EIO=4&transport=polling&t=PKn990Q.0&sid=cNdgwskLVmNSdBn2AAAC HTTP/1.1" 200 -
+2025-02-23 10:20:34,668 - INFO - 127.0.0.1 - - [23/Feb/2025 10:20:34] "GET /socket.io/?EIO=4&transport=polling&t=PKn990g&sid=cNdgwskLVmNSdBn2AAAC HTTP/1.1" 200 -
+2025-02-23 10:21:11,371 - INFO - 127.0.0.1 - - [23/Feb/2025 10:21:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-23 10:21:13,975 - INFO - 127.0.0.1 - - [23/Feb/2025 10:21:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

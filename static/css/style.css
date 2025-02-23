@@ -1,0 +1,29 @@
+.video-container {
+    position: relative;
+    width: 100%;
+    background: var(--bs-dark);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-frame {
+    width: 100%;
+    max-height: 400px;
+    background: var(--bs-dark);
+    object-fit: cover;
+}
+
+.video-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#status {
+    transition: all 0.3s ease;
+}

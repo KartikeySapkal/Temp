@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthcare Hub - Disease Prediction</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #0a0f1c;
+        color: #f3f4f6;
+        font-family: system-ui, -apple-system, sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .vector-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .vector-element {
+        position: absolute;
+        opacity: 0.03;
+        stroke: #fff;
+        fill: none;
+        stroke-width: 1;
+      }
+
+      .grid-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            rgba(96, 165, 250, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(96, 165, 250, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: -2;
+      }
+
+      .nav-container {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(13, 18, 30, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+      }
+
+      nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        background: linear-gradient(135deg, #60a5fa, #7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: #f3f4f6;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #60a5fa;
+      }
+
+      .prediction-container {
+        margin-top: 5rem;
+        padding: 4rem 1rem;
+        position: relative;
+      }
+
+      .prediction-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100%;
+        background: radial-gradient(
+          circle at 50% 0%,
+          rgba(124, 58, 237, 0.1) 0%,
+          rgba(13, 18, 30, 0) 50%
+        );
+        z-index: -1;
+      }
+
+      .form-container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(17, 24, 39, 0.7);
+        border-radius: 1rem;
+        border: 1px solid rgba(124, 58, 237, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      .input-group {
+        margin: 1.5rem 0;
+      }
+
+      .input-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #e5e7eb;
+        font-size: 1.1rem;
+      }
+
+      .input-field {
+        width: 100%;
+        padding: 1rem;
+        background: rgba(17, 24, 39, 0.8);
+        border: 1px solid rgba(124, 58, 237, 0.2);
+        border-radius: 0.5rem;
+        color: #f3f4f6;
+        transition: all 0.3s;
+      }
+
+      .input-field:focus {
+        outline: none;
+        border-color: #60a5fa;
+        box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 1rem;
+        background: linear-gradient(135deg, #60a5fa, #7c3aed);
+        border: none;
+        border-radius: 0.5rem;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+
+      .submit-btn:hover {
+        opacity: 0.9;
+      }
+
+      .results-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(17, 24, 39, 0.7);
+        border-radius: 1rem;
+        border: 1px solid rgba(124, 58, 237, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .results-title {
+        color: #60a5fa;
+        margin-bottom: 1rem;
+      }
+
+      .results-list {
+        list-style: none;
+        margin: 1rem 0;
+      }
+
+      .results-list li {
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .results-list li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: #60a5fa;
+        border-radius: 50%;
+        margin-right: 0.8rem;
+      }
+
+      .new-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+      }
+
+      footer {
+        background: rgba(13, 18, 30, 0.95);
+        padding: 1rem;
+        text-align: center;
+        margin-top: 4rem;
+        border-top: 1px solid rgba(96, 165, 250, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-pattern"></div>
+    <div class="vector-background" id="vector-bg"></div>
+
+    <div class="nav-container">
+      <nav>
+        <div class="logo">Healthcare Hub</div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/analytic">Analytics</a></li>
+          <li><a href="/chatbot">Chatbot</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main class="prediction-container">
+      <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem">
+        Disease Prediction & Medical Recommendation
+      </h1>
+      <p style="text-align: center; color: #9ca3af; margin-bottom: 2rem">
+        Enter your symptoms for AI-powered diagnosis and treatment
+        recommendations
+      </p>
+
+      <div class="form-container">
+        <form id="prediction-form">
+          <div class="input-group">
+            <label for="symptoms" class="input-label"
+              >Describe your symptoms:</label
+            >
+            <textarea
+              id="symptoms"
+              name="symptoms"
+              class="input-field"
+              rows="4"
+              placeholder="e.g., persistent headache, mild fever, dry cough..."
+              required
+            ></textarea>
+          </div>
+          <div class="new-buttons">
+            <button type="submit" class="submit-btn" aria-label="Analyze Symptoms">
+              Analyze Symptoms
+            </button>
+            <button id="locatePharmacyBtn" class="submit-btn" aria-label="Locate Nearby Pharmacy">
+              Locate Nearby Pharmacy
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="dynamic-results" class="results-container" style="display: none;">
+        <!-- Results will be populated here dynamically -->
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Healthcare Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Form submission handling
+      document.getElementById("prediction-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this);
+
+        fetch("/predict", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const resultsContainer = document.getElementById("dynamic-results");
+            resultsContainer.style.display = "block";
+            resultsContainer.innerHTML = `
+              <h2 class="results-title">Prediction Results</h2>
+              <div class="result-item">
+                <h3 style="color: #60a5fa">Predicted Condition: ${data.predicted_disease}</h3>
+                <p style="margin: 1rem 0">${data.dis_des}</p>
+              </div>
+              <div class="result-item">
+                <h3 style="color: #60a5fa; margin-top: 1.5rem">Recommended Precautions:</h3>
+                <ul class="results-list">
+                  ${data.my_precautions.map((precaution) => `<li>${precaution}</li>`).join("")}
+                </ul>
+              </div>
+              <div class="result-item">
+                <h3 style="color: #60a5fa; margin-top: 1.5rem">Suggested Medications:</h3>
+                <ul class="results-list">
+                  ${data.medications.map((medication) => `<li>${medication}</li>`).join("")}
+                </ul>
+              </div>
+              <div class="result-item">
+                <h3 style="color: #60a5fa; margin-top: 1.5rem">Recommended Exercise:</h3>
+                <ul class="results-list">
+                  ${data.workout.map((exercise) => `<li>${exercise}</li>`).join("")}
+                </ul>
+              </div>
+              <div class="result-item">
+                <h3 style="color: #60a5fa; margin-top: 1.5rem">Dietary Recommendations:</h3>
+                <ul class="results-list">
+                  ${data.my_diet.map((diet) => `<li>${diet}</li>`).join("")}
+                </ul>
+              </div>
+            `;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("An error occurred while processing your request. Please try again.");
+          });
+      });
+
+      // Locate nearby pharmacy
+      document.getElementById("locatePharmacyBtn").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent form submission if inside a form
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const lat = position.coords.latitude;
+              const lng = position.coords.longitude;
+              window.open(
+                `https://www.google.com/maps/search/pharmacy/@${lat},${lng},15z`,
+                "_blank"
+              );
+            },
+            (error) => {
+              console.error("Geolocation error:", error);
+              alert("Unable to retrieve your location. Please enable location services or search manually.");
+              window.open(
+                "https://www.google.com/maps/search/pharmacy+near+me",
+                "_blank"
+              );
+            }
+          );
+        } else {
+          alert("Geolocation is not supported by your browser. Searching for pharmacies near you.");
+          window.open(
+            "https://www.google.com/maps/search/pharmacy+near+me",
+            "_blank"
+          );
+        }
+      });
+
+      // Create vector background elements
+      const vectorBg = document.getElementById("vector-bg");
+      const shapes = [
+        "M0 0 L20 20", // Lines
+        "M0 0 A10 10 0 0 1 20 20", // Curves
+        "M0 0 H20 V20", // Right angles
+      ];
+
+      for (let i = 0; i < 30; i++) {
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("class", "vector-element");
+        svg.setAttribute("width", "40");
+        svg.setAttribute("height", "40");
+        svg.setAttribute("viewBox", "0 0 40 40");
+
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", shapes[Math.floor(Math.random() * shapes.length)]);
+        svg.appendChild(path);
+
+        svg.style.left = `${Math.random() * 100}%`;
+        svg.style.top = `${Math.random() * 100}%`;
+        svg.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+        vectorBg.appendChild(svg);
+
+        // Animate each vector element
+        gsap.to(svg, {
+          rotation: "random(-180, 180)",
+          x: "random(-30, 30)",
+          y: "random(-30, 30)",
+          duration: "random(15, 30)",
+          repeat: -1,
+          yoyo: true,
+          ease: "none",
+        });
+      }
+
+      // Subtle parallax effect on mouse move
+      document.addEventListener("mousemove", (e) => {
+        const mouseX = e.clientX / window.innerWidth - 0.5;
+        const mouseY = e.clientY / window.innerHeight - 0.5;
+
+        gsap.to(".vector-element", {
+          x: mouseX * 30,
+          y: mouseY * 30,
+          duration: 1,
+        });
+      });
+    </script>
+  </body>
+</html>
