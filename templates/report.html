@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Assessment Form</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-3xl space-y-8">
+    <h1 class="text-2xl font-bold text-center">Heart Health Data Predictor</h1>
+
+    <!-- File Upload Section -->
+    <div class="border-2 border-dashed border-gray-400 p-6 rounded-lg text-center">
+      <h2 class="text-lg font-semibold mb-2">Upload Your Report</h2>
+      <input id="fileInput" type="file" accept=".pdf" class="hidden" />
+      <label for="fileInput" class="cursor-pointer inline-block px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-500 hover:text-white transition">
+        Choose PDF File
+      </label>
+      <p id="selectedFileName" class="mt-2 text-sm text-gray-500"></p>
+      <button id="extractBtn" class="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition">
+        Submit
+      </button>
+    </div>
+
+    <!-- Data Form -->
+    <form id="dataForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <!-- Age -->
+      <div>
+        <label for="age" class="block text-gray-700">Age</label>
+        <input type="number" id="age" placeholder="Enter age" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Sex -->
+      <div>
+        <label for="sex" class="block text-gray-700">Sex (0=Female, 1=Male)</label>
+        <input type="number" id="sex" placeholder="0 or 1" min="0" max="1" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Chest Pain Type -->
+      <div>
+        <label for="cp" class="block text-gray-700">Chest Pain Type (0-3)</label>
+        <input type="number" id="cp" placeholder="0-3" min="0" max="3" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Resting Blood Pressure -->
+      <div>
+        <label for="trestbps" class="block text-gray-700">Resting Blood Pressure</label>
+        <input type="number" id="trestbps" placeholder="Enter resting blood pressure" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Cholesterol -->
+      <div>
+        <label for="chol" class="block text-gray-700">Cholesterol</label>
+        <input type="number" id="chol" placeholder="Enter cholesterol level" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Fasting Blood Sugar -->
+      <div>
+        <label for="fbs" class="block text-gray-700">Fasting Blood Sugar (0/1)</label>
+        <input type="number" id="fbs" placeholder="0 or 1" min="0" max="1" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Resting ECG -->
+      <div>
+        <label for="restecg" class="block text-gray-700">Resting ECG (0-2)</label>
+        <input type="number" id="restecg" placeholder="0-2" min="0" max="2" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Max Heart Rate -->
+      <div>
+        <label for="thalach" class="block text-gray-700">Max Heart Rate</label>
+        <input type="number" id="thalach" placeholder="Enter max heart rate" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Exercise Induced Angina -->
+      <div>
+        <label for="exang" class="block text-gray-700">Exercise Induced Angina (0/1)</label>
+        <input type="number" id="exang" placeholder="0 or 1" min="0" max="1" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Oldpeak -->
+      <div>
+        <label for="oldpeak" class="block text-gray-700">Oldpeak (ST Depression)</label>
+        <input type="number" step="any" id="oldpeak" placeholder="Enter oldpeak" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Slope -->
+      <div>
+        <label for="slope" class="block text-gray-700">Slope (0-2)</label>
+        <input type="number" id="slope" placeholder="0-2" min="0" max="2" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Number of Major Vessels -->
+      <div>
+        <label for="ca" class="block text-gray-700">Number of Major Vessels (0-3)</label>
+        <input type="number" id="ca" placeholder="0-3" min="0" max="3" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Thal -->
+      <div>
+        <label for="thal" class="block text-gray-700">Thal (0-3)</label>
+        <input type="number" id="thal" placeholder="0-3" min="0" max="3" class="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="sm:col-span-2 mt-4">
+        <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded hover:bg-blue-600 transition duration-300">
+          Submit Form
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Replace with your actual bearer token
+    const bearerToken = "Bearer sk-fab29efa4a764e269defd179513cbdff";
+
+    // File upload elements
+    const fileInput = document.getElementById("fileInput");
+    const selectedFileName = document.getElementById("selectedFileName");
+    const extractBtn = document.getElementById("extractBtn");
+
+    fileInput.addEventListener("change", () => {
+      if (fileInput.files.length > 0) {
+        selectedFileName.textContent = fileInput.files[0].name;
+      } else {
+        selectedFileName.textContent = "";
+      }
+    });
+
+    extractBtn.addEventListener("click", async () => {
+      if (!fileInput.files.length) {
+        alert("Please select a PDF file to extract data.");
+        return;
+      }
+
+      const report = fileInput.files[0];
+
+      // ----- First Step: PDF Extraction -----
+      const pdfFormData = new FormData();
+      pdfFormData.append("file", report, report.name);
+
+      try {
+        // PDF extraction request
+        const pdfResponse = await fetch("https://api.worqhat.com/api/ai/v2/pdf-extract", {
+          method: 'POST',
+          headers: { 'Authorization': bearerToken },
+          body: pdfFormData,
+          redirect: 'follow'
+        });
+        const pdfResult = await pdfResponse.text();
+        console.log("PDF Extraction Result:", pdfResult);
+      } catch (error) {
+        console.error("PDF Extraction Error:", error);
+      }
+
+      // ----- Second Step: Contact Information Extraction -----
+      const myHeaders = new Headers();
+      myHeaders.append('Authorization', bearerToken);
+
+      const contactInfoQuestion = `Extract the information from the file and arrange in below json format. Only provide numeric values for each field: 
+      { 
+        "age": "<age>", 
+        "sex": "<sex> (0=Female, 1=Male)", 
+        "cp": "<cp> (0=No pain, 1=Low, 2=Moderate/Mild, 3=High)", 
+        "trestbps": "<trestbps>", 
+        "chol": "<chol>", 
+        "fbs": "<fbs> (0=Normal, 1=Abnormal (low/high))", 
+        "restecg": "<restecg>", 
+        "thalach": "<thalach>", 
+        "exang": "<exang> (0=Absent, 1=Present)" 
+        "oldpeak": "<oldpeak>" 
+        "slope": "<slope>" 
+        "ca": "<ca>" 
+        "thal": "<thal>" 
+      }`;
+
+      try {
+        const contactFormData = new FormData();
+        contactFormData.append('question', contactInfoQuestion);
+        contactFormData.append('training_data', 'You are alex and you are one of the best health report checker. Extract the data from the provided file.');
+        contactFormData.append('files', report);
+        contactFormData.append('model', 'aicon-v4-nano-160824');
+        contactFormData.append('stream_data', 'false');
+
+        const contactRequestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: contactFormData,
+          redirect: 'follow',
+        };
+
+        const contactResponse = await fetch("https://api.worqhat.com/api/ai/content/v4", contactRequestOptions);
+        const contactResult = await contactResponse.json();
+        console.log('ContactResult: ',contactResult);
+        let contactDataStr = contactResult.content;
+        // Clean up formatting if needed (removing markdown formatting)
+        contactDataStr = contactDataStr.replace(/```json\n|\n```/g, '');
+        const contactData = JSON.parse(contactDataStr);
+        console.log("Contact Information:", contactData);
+
+        // Auto-fill the form with some extracted values (if applicable)
+        if(contactData.age) document.getElementById('age').value = contactData.age;
+        if(contactData.sex) document.getElementById('sex').value = contactData.sex;
+        if(contactData.cp) document.getElementById('cp').value = contactData.cp;
+        if(contactData.trestbps) document.getElementById('trestbps').value = contactData.trestbps;
+        if(contactData.chol) document.getElementById('chol').value = contactData.chol;
+        if(contactData.fbs) document.getElementById('fbs').value = contactData.fbs;
+        if(contactData.restecg) document.getElementById('restecg').value = contactData.restecg;
+        if(contactData.thalach) document.getElementById('thalach').value = contactData.thalach;
+        if(contactData.exang) document.getElementById('exang').value = contactData.exang;
+        if(contactData.oldpeak) document.getElementById('oldpeak').value = contactData.oldpeak;
+        if(contactData.slope) document.getElementById('slope').value = contactData.slope;
+        if(contactData.ca) document.getElementById('ca').value = contactData.ca;
+        if(contactData.thal) document.getElementById('thal').value = contactData.thal;
+        // Additional mapping can be done as needed.
+        // alert("Extraction complete! Check console for output.");
+      } catch (error) {
+        console.error("Contact Extraction Error:", error);
+        alert("Error during contact extraction. Check console for details.");
+      }
+    });
+
+    // Form submission handling
+    document.getElementById('dataForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = {
+        age: document.getElementById('age').value,
+        sex: document.getElementById('sex').value,
+        cp: document.getElementById('cp').value,
+        trestbps: document.getElementById('trestbps').value,
+        chol: document.getElementById('chol').value,
+        fbs: document.getElementById('fbs').value,
+        restecg: document.getElementById('restecg').value,
+        thalach: document.getElementById('thalach').value,
+        exang: document.getElementById('exang').value,
+        oldpeak: document.getElementById('oldpeak').value,
+        slope: document.getElementById('slope').value,
+        ca: document.getElementById('ca').value,
+        thal: document.getElementById('thal').value
+      };
+      console.log("Submitted Form Data:", formData);
+      alert("Form submitted! Check console for details.");
+    });
+  </script>
+</body>
+</html>

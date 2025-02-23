@@ -8,8 +8,11 @@ from fuzzywuzzy import process
 import ast
 from symptoms import *
 from ollama import chat
+from typing import List
+import bleach
 
 app = Flask(__name__)
+
 
 sym_des = pd.read_csv("kaggle_dataset/symptoms_df.csv")
 precautions = pd.read_csv("kaggle_dataset/precautions_df.csv")
@@ -291,6 +294,66 @@ def dashboard():
     )
 
 
+def sanitize_input(text: str) -> str:
+    """Basic input sanitization"""
+    return bleach.clean(text, tags=[], strip=True)
+
+
+@app.route('/Health')
+def Health():
+    return render_template('Health.html')
+
+
+@app.route('/correlate_health', methods=['POST'])
+def correlate_health():
+    try:
+        data = request.json
+
+        # Sanitize inputs
+        medications = [sanitize_input(med) for med in data.get('medications', [])]
+        allergies = [sanitize_input(allergy) for allergy in data.get('allergies', [])]
+        genetic_history = sanitize_input(data.get('genetic_history', ""))
+
+        # Create prompt for LLaMA
+        prompt = f"""
+        A patient has provided the following health data:
+        - Current Medications: {', '.join(medications)}
+        - Known Allergies: {', '.join(allergies)}
+        - Genetic Disease History: {genetic_history}
+
+        Correlate the medications, allergies, and genetic history to identify potential risks, 
+        drug interactions, and hereditary concerns. Provide a summary of potential health risks 
+        and suggest precautions. Answer in 50-70 words.
+        """
+
+        # Get response from LLaMA
+        correlation_analysis = ""
+        try:
+            stream = chat(
+                model='llama3.2',
+                messages=[{'role': 'user', 'content': prompt}],
+                stream=True
+            )
+
+            for chunk in stream:
+                if isinstance(chunk, tuple):
+                    chunk_content = chunk[0]
+                else:
+                    chunk_content = chunk.get('message', {}).get('content', '')
+                correlation_analysis += str(chunk_content)
+
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+        return jsonify({"correlation_analysis": correlation_analysis})
+
+    except Exception as e:
+        return jsonify({"error": "Invalid request"}), 400
+
+
+@app.route('/report')
+def report():
+    return render_template('report.html')
 
 
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size

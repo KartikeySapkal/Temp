@@ -950,3 +950,178 @@
 2025-02-23 00:36:27,290 - INFO - 127.0.0.1 - - [23/Feb/2025 00:36:27] "GET /analytic HTTP/1.1" 200 -
 2025-02-23 00:36:29,465 - INFO - 127.0.0.1 - - [23/Feb/2025 00:36:29] "GET /chatbot HTTP/1.1" 200 -
 2025-02-23 00:36:31,881 - INFO - 127.0.0.1 - - [23/Feb/2025 00:36:31] "GET /dashboard HTTP/1.1" 200 -
+2025-02-23 07:25:09,412 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-23 07:25:09,413 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-23 07:25:09,414 - INFO -  * Restarting with stat
+2025-02-23 07:25:10,803 - WARNING -  * Debugger is active!
+2025-02-23 07:25:10,839 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 07:25:21,393 - INFO - 127.0.0.1 - - [23/Feb/2025 07:25:21] "GET / HTTP/1.1" 200 -
+2025-02-23 07:26:16,836 - INFO - 127.0.0.1 - - [23/Feb/2025 07:26:16] "GET /services HTTP/1.1" 200 -
+2025-02-23 07:26:25,210 - INFO - 127.0.0.1 - - [23/Feb/2025 07:26:25] "GET / HTTP/1.1" 200 -
+2025-02-23 07:26:30,648 - INFO - 127.0.0.1 - - [23/Feb/2025 07:26:30] "GET /services HTTP/1.1" 200 -
+2025-02-23 07:26:46,274 - INFO - 127.0.0.1 - - [23/Feb/2025 07:26:46] "POST /predict HTTP/1.1" 200 -
+2025-02-23 07:27:15,935 - INFO - 127.0.0.1 - - [23/Feb/2025 07:27:15] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 07:27:31,143 - INFO - 127.0.0.1 - - [23/Feb/2025 07:27:31] "POST /calculate_bmi HTTP/1.1" 200 -
+2025-02-23 07:27:38,174 - INFO - 127.0.0.1 - - [23/Feb/2025 07:27:38] "POST /calculate_bmi HTTP/1.1" 200 -
+2025-02-23 07:28:09,194 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-02-23 07:28:11,939 - INFO - 127.0.0.1 - - [23/Feb/2025 07:28:11] "POST /predict_diabetes HTTP/1.1" 200 -
+2025-02-23 07:29:20,441 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-02-23 07:29:21,753 - INFO - 127.0.0.1 - - [23/Feb/2025 07:29:21] "POST /predict_heart_disease HTTP/1.1" 200 -
+2025-02-23 07:30:10,674 - INFO - 127.0.0.1 - - [23/Feb/2025 07:30:10] "GET /dashboard HTTP/1.1" 200 -
+2025-02-23 07:30:32,796 - INFO - 127.0.0.1 - - [23/Feb/2025 07:30:32] "GET / HTTP/1.1" 200 -
+2025-02-23 07:30:56,379 - INFO - 127.0.0.1 - - [23/Feb/2025 07:30:56] "GET /services HTTP/1.1" 200 -
+2025-02-23 07:30:57,877 - INFO - 127.0.0.1 - - [23/Feb/2025 07:30:57] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 07:30:59,773 - INFO - 127.0.0.1 - - [23/Feb/2025 07:30:59] "GET /chatbot HTTP/1.1" 200 -
+2025-02-23 07:33:00,972 - INFO - Saved image to: uploads/20250223_073300/WhatsApp_Image_2025-01-27_at_11.00.24.jpeg
+2025-02-23 07:34:06,942 - INFO - HTTP Request: POST https://sought-precise-lizard.ngrok-free.app/api/chat "HTTP/1.1 200 OK"
+2025-02-23 07:34:06,950 - INFO - 127.0.0.1 - - [23/Feb/2025 07:34:06] "POST /chat HTTP/1.1" 200 -
+2025-02-23 07:37:42,476 - INFO - 127.0.0.1 - - [23/Feb/2025 07:37:42] "GET /dashboard HTTP/1.1" 200 -
+2025-02-23 07:45:41,710 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 07:45:41,981 - INFO -  * Restarting with stat
+2025-02-23 07:54:33,015 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-23 07:54:33,016 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-23 07:54:33,017 - INFO -  * Restarting with stat
+2025-02-23 07:54:34,470 - WARNING -  * Debugger is active!
+2025-02-23 07:54:34,503 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 07:54:37,006 - INFO - 127.0.0.1 - - [23/Feb/2025 07:54:37] "GET / HTTP/1.1" 200 -
+2025-02-23 07:58:30,567 - INFO - 127.0.0.1 - - [23/Feb/2025 07:58:30] "GET / HTTP/1.1" 200 -
+2025-02-23 07:58:32,121 - INFO - 127.0.0.1 - - [23/Feb/2025 07:58:32] "GET /voice_symptoms HTTP/1.1" 200 -
+2025-02-23 07:58:36,315 - ERROR - An error occurred during recording: Could not find PyAudio; check installation
+2025-02-23 07:58:36,316 - INFO - 127.0.0.1 - - [23/Feb/2025 07:58:36] "POST /record_symptoms HTTP/1.1" 200 -
+2025-02-23 07:58:38,836 - ERROR - An error occurred during recording: Could not find PyAudio; check installation
+2025-02-23 07:58:38,837 - INFO - 127.0.0.1 - - [23/Feb/2025 07:58:38] "POST /record_symptoms HTTP/1.1" 200 -
+2025-02-23 07:58:41,866 - ERROR - An error occurred during recording: Could not find PyAudio; check installation
+2025-02-23 07:58:41,866 - INFO - 127.0.0.1 - - [23/Feb/2025 07:58:41] "POST /record_symptoms HTTP/1.1" 200 -
+2025-02-23 08:02:15,252 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:02:15,572 - INFO -  * Restarting with stat
+2025-02-23 08:02:17,733 - WARNING -  * Debugger is active!
+2025-02-23 08:02:17,764 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:05:22,775 - WARNING - Applied processor reduces input query to empty string, all comparisons will have score 0. [Query: '']
+2025-02-23 08:05:22,800 - INFO - 127.0.0.1 - - [23/Feb/2025 08:05:22] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:05:25,220 - WARNING - Applied processor reduces input query to empty string, all comparisons will have score 0. [Query: '']
+2025-02-23 08:05:25,223 - INFO - 127.0.0.1 - - [23/Feb/2025 08:05:25] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:05:26,243 - ERROR - An error occurred during recording: Could not find PyAudio; check installation
+2025-02-23 08:05:26,244 - INFO - 127.0.0.1 - - [23/Feb/2025 08:05:26] "POST /record_symptoms HTTP/1.1" 200 -
+2025-02-23 08:09:22,635 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:09:22,907 - INFO -  * Restarting with stat
+2025-02-23 08:11:45,114 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-23 08:11:45,115 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-23 08:11:45,116 - INFO -  * Restarting with stat
+2025-02-23 08:11:46,734 - WARNING -  * Debugger is active!
+2025-02-23 08:11:46,764 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:11:53,403 - INFO - 127.0.0.1 - - [23/Feb/2025 08:11:53] "GET / HTTP/1.1" 200 -
+2025-02-23 08:11:55,108 - INFO - 127.0.0.1 - - [23/Feb/2025 08:11:55] "GET /voice_symptoms HTTP/1.1" 200 -
+2025-02-23 08:11:56,103 - INFO - Recording audio...
+2025-02-23 08:12:26,247 - INFO - 127.0.0.1 - - [23/Feb/2025 08:12:26] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:12:42,808 - INFO - Audio saved to static/recordings/patient_voice.mp3
+2025-02-23 08:12:44,798 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-02-23 08:12:44,805 - INFO - 127.0.0.1 - - [23/Feb/2025 08:12:44] "POST /record_symptoms HTTP/1.1" 200 -
+2025-02-23 08:13:19,011 - INFO - Recording audio...
+2025-02-23 08:13:24,603 - INFO - Audio saved to static/recordings/patient_voice.mp3
+2025-02-23 08:13:26,526 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-02-23 08:13:26,532 - INFO - 127.0.0.1 - - [23/Feb/2025 08:13:26] "POST /record_symptoms HTTP/1.1" 200 -
+2025-02-23 08:13:29,382 - INFO - Recording audio...
+2025-02-23 08:13:34,910 - INFO - Audio saved to static/recordings/patient_voice.mp3
+2025-02-23 08:13:36,969 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-02-23 08:13:36,974 - INFO - 127.0.0.1 - - [23/Feb/2025 08:13:36] "POST /record_symptoms HTTP/1.1" 200 -
+2025-02-23 08:13:41,780 - INFO - 127.0.0.1 - - [23/Feb/2025 08:13:41] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-02-23 08:15:28,242 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:15:28,525 - INFO -  * Restarting with stat
+2025-02-23 08:15:31,063 - WARNING -  * Debugger is active!
+2025-02-23 08:15:31,119 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:19:57,214 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:19:57,507 - INFO -  * Restarting with stat
+2025-02-23 08:19:59,994 - WARNING -  * Debugger is active!
+2025-02-23 08:20:00,026 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:21:46,159 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:21:46,374 - INFO -  * Restarting with stat
+2025-02-23 08:21:48,414 - WARNING -  * Debugger is active!
+2025-02-23 08:21:48,445 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:21:49,672 - INFO - 127.0.0.1 - - [23/Feb/2025 08:21:49] "GET / HTTP/1.1" 200 -
+2025-02-23 08:21:52,190 - INFO - 127.0.0.1 - - [23/Feb/2025 08:21:52] "GET /voice_symptoms HTTP/1.1" 200 -
+2025-02-23 08:21:53,556 - INFO - Adjusting for ambient noise...
+2025-02-23 08:21:54,537 - INFO - Start speaking now...
+2025-02-23 08:21:56,628 - INFO - 127.0.0.1 - - [23/Feb/2025 08:21:56] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:21:57,438 - INFO - Recording complete.
+2025-02-23 08:21:57,903 - INFO - Audio saved to static/recordings/patient_voice.mp3
+2025-02-23 08:21:59,355 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-02-23 08:21:59,378 - INFO - 127.0.0.1 - - [23/Feb/2025 08:21:59] "POST /record_symptoms HTTP/1.1" 200 -
+2025-02-23 08:22:08,297 - INFO - Adjusting for ambient noise...
+2025-02-23 08:22:09,282 - INFO - Start speaking now...
+2025-02-23 08:22:11,095 - INFO - Recording complete.
+2025-02-23 08:22:11,372 - INFO - Audio saved to static/recordings/patient_voice.mp3
+2025-02-23 08:22:12,795 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-02-23 08:22:12,826 - INFO - 127.0.0.1 - - [23/Feb/2025 08:22:12] "POST /record_symptoms HTTP/1.1" 200 -
+2025-02-23 08:22:15,111 - INFO - 127.0.0.1 - - [23/Feb/2025 08:22:15] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-02-23 08:22:42,223 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:22:42,444 - INFO -  * Restarting with stat
+2025-02-23 08:22:44,254 - WARNING -  * Debugger is active!
+2025-02-23 08:22:44,284 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:23:07,014 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:23:07,601 - INFO -  * Restarting with stat
+2025-02-23 08:23:09,379 - WARNING -  * Debugger is active!
+2025-02-23 08:23:09,409 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:23:15,825 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:23:16,019 - INFO -  * Restarting with stat
+2025-02-23 08:23:17,802 - WARNING -  * Debugger is active!
+2025-02-23 08:23:17,829 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:23:25,614 - INFO - 127.0.0.1 - - [23/Feb/2025 08:23:25] "GET / HTTP/1.1" 200 -
+2025-02-23 08:23:28,092 - INFO - 127.0.0.1 - - [23/Feb/2025 08:23:28] "GET / HTTP/1.1" 200 -
+2025-02-23 08:23:29,924 - INFO - 127.0.0.1 - - [23/Feb/2025 08:23:29] "[33mGET /voice_symptoms HTTP/1.1[0m" 404 -
+2025-02-23 08:23:32,679 - INFO - 127.0.0.1 - - [23/Feb/2025 08:23:32] "GET /dashboard HTTP/1.1" 200 -
+2025-02-23 08:23:34,596 - INFO - 127.0.0.1 - - [23/Feb/2025 08:23:34] "GET /chatbot HTTP/1.1" 200 -
+2025-02-23 08:23:48,906 - INFO - HTTP Request: POST https://sought-precise-lizard.ngrok-free.app/api/chat "HTTP/1.1 200 OK"
+2025-02-23 08:23:48,910 - INFO - 127.0.0.1 - - [23/Feb/2025 08:23:48] "POST /chat HTTP/1.1" 200 -
+2025-02-23 08:24:34,844 - INFO - 127.0.0.1 - - [23/Feb/2025 08:24:34] "GET / HTTP/1.1" 200 -
+2025-02-23 08:24:36,977 - INFO - 127.0.0.1 - - [23/Feb/2025 08:24:36] "GET /analytic HTTP/1.1" 200 -
+2025-02-23 08:24:38,951 - INFO - 127.0.0.1 - - [23/Feb/2025 08:24:38] "GET /services HTTP/1.1" 200 -
+2025-02-23 08:27:49,343 - INFO - 127.0.0.1 - - [23/Feb/2025 08:27:49] "GET /services HTTP/1.1" 200 -
+2025-02-23 08:27:51,039 - INFO - 127.0.0.1 - - [23/Feb/2025 08:27:51] "GET /services HTTP/1.1" 200 -
+2025-02-23 08:28:03,005 - INFO - 127.0.0.1 - - [23/Feb/2025 08:28:03] "GET /dashboard HTTP/1.1" 200 -
+2025-02-23 08:32:52,197 - INFO - 127.0.0.1 - - [23/Feb/2025 08:32:52] "GET /services HTTP/1.1" 200 -
+2025-02-23 08:33:36,713 - INFO - 127.0.0.1 - - [23/Feb/2025 08:33:36] "GET /services HTTP/1.1" 200 -
+2025-02-23 08:35:51,831 - INFO - 127.0.0.1 - - [23/Feb/2025 08:35:51] "GET /services HTTP/1.1" 200 -
+2025-02-23 08:36:02,398 - INFO - 127.0.0.1 - - [23/Feb/2025 08:36:02] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:36:06,714 - WARNING - Applied processor reduces input query to empty string, all comparisons will have score 0. [Query: '']
+2025-02-23 08:36:06,719 - INFO - 127.0.0.1 - - [23/Feb/2025 08:36:06] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:36:07,518 - WARNING - Applied processor reduces input query to empty string, all comparisons will have score 0. [Query: '']
+2025-02-23 08:36:07,519 - INFO - 127.0.0.1 - - [23/Feb/2025 08:36:07] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:36:16,525 - INFO - 127.0.0.1 - - [23/Feb/2025 08:36:16] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:36:35,248 - INFO - 127.0.0.1 - - [23/Feb/2025 08:36:35] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:36:52,916 - INFO - 127.0.0.1 - - [23/Feb/2025 08:36:52] "POST /predict HTTP/1.1" 200 -
+2025-02-23 08:36:58,055 - INFO - 127.0.0.1 - - [23/Feb/2025 08:36:58] "GET /chatbot HTTP/1.1" 200 -
+2025-02-23 08:37:01,464 - INFO - 127.0.0.1 - - [23/Feb/2025 08:37:01] "GET / HTTP/1.1" 200 -
+2025-02-23 08:43:47,027 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:43:47,326 - INFO -  * Restarting with stat
+2025-02-23 08:43:49,626 - WARNING -  * Debugger is active!
+2025-02-23 08:43:49,663 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:44:20,802 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:44:21,035 - INFO -  * Restarting with stat
+2025-02-23 08:44:22,926 - WARNING -  * Debugger is active!
+2025-02-23 08:44:22,975 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:47:03,657 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:47:03,947 - INFO -  * Restarting with stat
+2025-02-23 08:47:06,289 - WARNING -  * Debugger is active!
+2025-02-23 08:47:06,327 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:47:08,494 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:47:08,706 - INFO -  * Restarting with stat
+2025-02-23 08:50:44,432 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-23 08:50:44,432 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-23 08:50:44,434 - INFO -  * Restarting with stat
+2025-02-23 08:50:45,917 - WARNING -  * Debugger is active!
+2025-02-23 08:50:45,953 - INFO -  * Debugger PIN: 105-815-126
+2025-02-23 08:50:55,682 - INFO - 127.0.0.1 - - [23/Feb/2025 08:50:55] "GET / HTTP/1.1" 200 -
+2025-02-23 08:51:01,729 - INFO - 127.0.0.1 - - [23/Feb/2025 08:51:01] "GET / HTTP/1.1" 200 -
+2025-02-23 08:51:03,318 - INFO - 127.0.0.1 - - [23/Feb/2025 08:51:03] "GET /Health HTTP/1.1" 200 -
+2025-02-23 08:51:43,233 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-02-23 08:51:47,486 - INFO - 127.0.0.1 - - [23/Feb/2025 08:51:47] "POST /correlate_health HTTP/1.1" 200 -
+2025-02-23 08:52:53,592 - INFO - 127.0.0.1 - - [23/Feb/2025 08:52:53] "GET /Health HTTP/1.1" 200 -
+2025-02-23 08:52:59,250 - INFO - 127.0.0.1 - - [23/Feb/2025 08:52:59] "GET / HTTP/1.1" 200 -
+2025-02-23 08:53:04,138 - INFO - 127.0.0.1 - - [23/Feb/2025 08:53:04] "GET /Health HTTP/1.1" 200 -
+2025-02-23 08:54:30,867 - INFO - 127.0.0.1 - - [23/Feb/2025 08:54:30] "GET /Health HTTP/1.1" 200 -
+2025-02-23 08:55:58,160 - INFO -  * Detected change in '/Users/kartikeysapkal/Documents/Kartikey-v01/app.py', reloading
+2025-02-23 08:55:58,526 - INFO -  * Restarting with stat

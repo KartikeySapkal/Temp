@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction with Voice Input</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6">
+            <h1 class="text-2xl font-bold mb-6 text-center">Disease Prediction System</h1>
+
+            <!-- Voice Recording Section -->
+            <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                <h2 class="text-lg font-semibold mb-4">Voice Input</h2>
+                <div class="flex flex-col items-center gap-4">
+                    <button id="recordButton" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                        </svg>
+                        Start Recording
+                    </button>
+                    <p id="recordingStatus" class="text-sm text-gray-600">Click to start recording your symptoms</p>
+                </div>
+                <div id="transcriptionResult" class="mt-4 p-3 bg-gray-100 rounded hidden">
+                    <p class="font-medium">Transcribed Symptoms:</p>
+                    <p id="transcribedText" class="text-gray-700"></p>
+                </div>
+            </div>
+
+            <!-- Manual Input Section -->
+            <div class="mb-6">
+                <h2 class="text-lg font-semibold mb-4">Manual Input</h2>
+                <form id="symptomsForm" method="POST" action="/predict">
+                    <div class="mb-4">
+                        <label for="symptoms" class="block text-gray-700 mb-2">Enter Symptoms (comma-separated)</label>
+                        <textarea
+                            id="symptoms"
+                            name="symptoms"
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            rows="3"
+                            placeholder="Enter symptoms here..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">
+                        Predict Disease
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="hidden">
+                <h2 class="text-lg font-semibold mb-4">Prediction Results</h2>
+                <div id="predictionResults" class="p-4 bg-gray-50 rounded-lg">
+                    <!-- Results will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const recordButton = document.getElementById('recordButton');
+        const recordingStatus = document.getElementById('recordingStatus');
+        const transcriptionResult = document.getElementById('transcriptionResult');
+        const transcribedText = document.getElementById('transcribedText');
+        const symptomsInput = document.getElementById('symptoms');
+        let isRecording = false;
+
+        recordButton.addEventListener('click', async () => {
+            if (!isRecording) {
+                // Start recording
+                isRecording = true;
+                recordButton.classList.remove('bg-blue-500');
+                recordButton.classList.add('bg-red-500');
+                recordButton.innerHTML = `
+                    <svg class="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="8"/>
+                    </svg>
+                    Stop Recording
+                `;
+                recordingStatus.textContent = 'Recording... Speak your symptoms clearly';
+
+                try {
+                    const response = await fetch('/record_symptoms', {
+                        method: 'POST'
+                    });
+                    const data = await response.json();
+
+                    if (data.success) {
+                        transcriptionResult.classList.remove('hidden');
+                        transcribedText.textContent = data.transcribed_text;
+                        symptomsInput.value = data.symptoms.join(', ');
+                    } else {
+                        alert('Error: ' + data.error);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred while recording');
+                }
+
+                // Reset button state
+                isRecording = false;
+                recordButton.classList.remove('bg-red-500');
+                recordButton.classList.add('bg-blue-500');
+                recordButton.innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                    </svg>
+                    Start Recording
+                `;
+                recordingStatus.textContent = 'Recording complete';
+            }
+        });
+
+        // Form submission handler
+        document.getElementById('symptomsForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: new FormData(e.target)
+                });
+                
+                if (response.ok) {
+                    const results = await response.text();
+                    document.getElementById('results').classList.remove('hidden');
+                    document.getElementById('predictionResults').innerHTML = results;
+                } else {
+                    alert('Error submitting symptoms');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while submitting the form');
+            }
+        });
+    </script>
+</body>
+</html>
