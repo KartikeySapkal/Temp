@@ -4,7 +4,7 @@ import logging
 
 class ChatConfig:
     UPLOAD_FOLDER = 'uploads'
-    OLLAMA_HOST = 'https://sought-precise-lizard.ngrok-free.app/'
+    OLLAMA_HOST = 'https://lamprey-useful-slug.ngrok-free.app/'
     OLLAMA_HEADERS = {'x-some-header': 'some-value'}
 
     @classmethod

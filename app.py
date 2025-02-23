@@ -10,9 +10,19 @@ from symptoms import *
 from ollama import chat
 from typing import List
 import bleach
+from flask_socketio import SocketIO, emit
+import logging
+import os
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 
 app = Flask(__name__)
 
+app.secret_key = os.environ.get("SESSION_SECRET", "dev_key_123")  # Fallback for development
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 sym_des = pd.read_csv("kaggle_dataset/symptoms_df.csv")
 precautions = pd.read_csv("kaggle_dataset/precautions_df.csv")
@@ -354,6 +364,51 @@ def correlate_health():
 @app.route('/report')
 def report():
     return render_template('report.html')
+
+@app.route('/locator')
+def locator():
+    return render_template('locator.html')
+
+
+
+@app.route('/virtual-assistant')
+def virtual_assistant():
+    return render_template('virtual-assistant.html')
+
+# @app.route('/')
+# def index():
+#     return render_template('index.html')
+
+@socketio.on('connect')
+def handle_connect():
+    logger.debug('Client connected')
+    emit('connection_success', {'data': 'Connected successfully'})
+
+@socketio.on('disconnect')
+def handle_disconnect(sid):  # Fixed: Added sid parameter
+    logger.debug(f'Client disconnected: {sid}')
+
+@socketio.on('offer')
+def handle_offer(data):
+    logger.debug('Handling offer')
+    emit('offer', data, broadcast=True, include_self=False)
+
+@socketio.on('answer')
+def handle_answer(data):
+    logger.debug('Handling answer')
+    emit('answer', data, broadcast=True, include_self=False)
+
+@socketio.on('ice-candidate')
+def handle_ice_candidate(data):
+    logger.debug('Handling ICE candidate')
+    emit('ice-candidate', data, broadcast=True, include_self=False)
+
+@socketio.on_error()
+def error_handler(e):
+    logger.error(f'SocketIO error: {str(e)}')
+    emit('error', {'message': 'An error occurred during signaling'})
+
+
 
 
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
