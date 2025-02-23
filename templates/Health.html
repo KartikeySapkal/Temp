@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Analyzer - Healthcare Hub</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0f1c;
+            color: #f3f4f6;
+            font-family: system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .vector-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .vector-element {
+            position: absolute;
+            opacity: 0.03;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 1;
+        }
+
+        .grid-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(96, 165, 250, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(96, 165, 250, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -2;
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 18, 30, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #60a5fa, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #f3f4f6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        main {
+            margin-top: 5rem;
+            padding: 4rem 1rem;
+            position: relative;
+        }
+
+        .analyzer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(17, 24, 39, 0.7);
+            border-radius: 1rem;
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #60a5fa;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #f3f4f6;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 0.5rem;
+            color: #f3f4f6;
+            margin-bottom: 0.5rem;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #60a5fa;
+        }
+
+        .tag button {
+            background: none;
+            border: none;
+            color: #60a5fa;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #7c3aed);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            opacity: 0.9;
+        }
+
+        #result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: none;
+        }
+
+        .success {
+            background: rgba(22, 163, 74, 0.1);
+            border: 1px solid rgba(22, 163, 74, 0.2);
+            color: #4ade80;
+        }
+
+        .error {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            color: #f87171;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            color: #60a5fa;
+            margin: 1.5rem 0;
+        }
+
+        footer {
+            background: rgba(13, 18, 30, 0.95);
+            padding: 1rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(96, 165, 250, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-pattern"></div>
+    <div class="vector-background" id="vector-bg"></div>
+
+    <div class="nav-container">
+        <nav>
+            <div class="logo">Healthcare Hub</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/analytic">Analytics</a></li>
+                <li><a href="/chatbot">Chatbot</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/voice_symptoms">Voice-Chat</a></li>
+                <li><a href="/Health">Medication-Analyzer</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="analyzer-container">
+            <h1 class="section-title">Medication Analysis</h1>
+            <form id="healthForm">
+                <div class="form-group">
+                    <label>Medications</label>
+                    <input type="text" id="medicationInput" placeholder="Type medication and press Enter">
+                    <div id="medicationTags" class="tags"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Allergies</label>
+                    <input type="text" id="allergyInput" placeholder="Type allergy and press Enter">
+                    <div id="allergyTags" class="tags"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Genetic History</label>
+                    <textarea id="geneticHistory" placeholder="Enter relevant genetic history"></textarea>
+                </div>
+
+                <button type="submit">Analyze Health Data</button>
+            </form>
+
+            <div id="loading" class="loading">Analyzing your health data...</div>
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Healthcare Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Vector background animation
+        const vectorBg = document.getElementById('vector-bg');
+        const shapes = [
+            'M0 0 L20 20',
+            'M0 0 A10 10 0 0 1 20 20',
+            'M0 0 H20 V20',
+        ];
+
+        for (let i = 0; i < 50; i++) {
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('class', 'vector-element');
+            svg.setAttribute('width', '40');
+            svg.setAttribute('height', '40');
+            svg.setAttribute('viewBox', '0 0 40 40');
+
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', shapes[Math.floor(Math.random() * shapes.length)]);
+            svg.appendChild(path);
+
+            svg.style.left = `${Math.random() * 100}%`;
+            svg.style.top = `${Math.random() * 100}%`;
+            svg.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+            vectorBg.appendChild(svg);
+
+            gsap.to(svg, {
+                rotation: 'random(-180, 180)',
+                x: 'random(-30, 30)',
+                y: 'random(-30, 30)',
+                duration: 'random(15, 30)',
+                repeat: -1,
+                yoyo: true,
+                ease: 'none'
+            });
+        }
+
+        // Health form functionality
+        class HealthForm {
+            constructor() {
+                this.medications = [];
+                this.allergies = [];
+                this.setupListeners();
+            }
+
+            setupListeners() {
+                document.getElementById('healthForm').addEventListener('submit', (e) => this.handleSubmit(e));
+                document.getElementById('medicationInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        this.addItem('medication');
+                    }
+                });
+                document.getElementById('allergyInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        this.addItem('allergy');
+                    }
+                });
+            }
+
+            addItem(type) {
+                const input = document.getElementById(`${type}Input`);
+                const value = input.value.trim();
+
+                if (!value) return;
+
+                const items = type === 'medication' ? this.medications : this.allergies;
+                if (!items.includes(value)) {
+                    items.push(value);
+                    this.updateTags(type);
+                }
+
+                input.value = '';
+            }
+
+            removeItem(type, value) {
+                const items = type === 'medication' ? this.medications : this.allergies;
+                const index = items.indexOf(value);
+                if (index > -1) {
+                    items.splice(index, 1);
+                    this.updateTags(type);
+                }
+            }
+
+            updateTags(type) {
+                const container = document.getElementById(`${type}Tags`);
+                const items = type === 'medication' ? this.medications : this.allergies;
+
+                container.innerHTML = items.map(item => `
+                    <span class="tag">
+                        ${item}
+                        <button type="button" onclick="healthForm.removeItem('${type}', '${item}')">×</button>
+                    </span>
+                `).join('');
+            }
+
+            showLoading(show) {
+                document.getElementById('loading').style.display = show ? 'block' : 'none';
+            }
+
+            showResult(message, isError = false) {
+                const result = document.getElementById('result');
+                result.textContent = message;
+                result.style.display = 'block';
+                result.className = isError ? 'error' : 'success';
+            }
+
+            async handleSubmit(e) {
+                e.preventDefault();
+                this.showLoading(true);
+
+                try {
+                    const response = await fetch('/correlate_health', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            medications: this.medications,
+                            allergies: this.allergies,
+                            genetic_history: document.getElementById('geneticHistory').value
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.error || 'Analysis failed');
+                    }
+
+                    this.showResult(data.correlation_analysis);
+                } catch (error) {
+                    this.showResult(error.message, true);
+                } finally {
+                    this.showLoading(false);
+                }
+            }
+        }
+
+        const healthForm = new HealthForm();
+
+        // Parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth - 0.5;
+            const mouseY = e.clientY / window.innerHeight - 0.5;
+
+            gsap.to('.vector-element', {
+                x: mouseX * 30,
+                y: mouseY * 30,
+                duration: 1
+            });
+        });
+    </script>
+</body>
+</html>
